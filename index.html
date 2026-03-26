@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Приглашение на свадьбу</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <!-- HERO СЕКЦИЯ -->
+        <section class="hero">
+            <img src="1.jpg" alt="Приглашение на свадьбу" class="hero__image">
+        </section>
+
+        <!-- СЕКЦИЯ 2: Музыка + Приглашение + Календарь -->
+        <section class="invitation">
+            <!-- Кнопка музыкального плеера -->
+            <div class="music-player">
+                <button class="music-btn" id="musicToggle">
+                    <img src="music-on2.png" alt="Включить музыку" id="musicIcon" class="music-icon">
+                </button>
+                <p class="music-text" id="musicText">Включить музыку</p>
+            </div>
+
+            <!-- Пригласительный текст -->
+            <h2 class="section-title pink-title">ДОРОГИЕ ГОСТИ!</h2>
+            <p class="invitation-text">Мы будем рады разделить с Вами радость неповторимого для нас дня -</p>
+            <h2 class="section-title pink-title">ДНЯ НАШЕЙ СВАДЬБЫ!</h2>
+            <p class="invitation-subtext">Приглашаем присоединиться к нашему празднику и украсить его своим присутствием!</p>
+
+            <!-- Блок с календарем и фоновым фото -->
+            <div class="calendar-wrapper">
+                <img src="calendar-01.png" alt="" class="calendar-bg">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <span class="calendar-month">Август, 2026</span>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ 3: Локация -->
+        <section class="location">
+            <h2 class="location-title">Локация</h2>
+            <h3 class="location-subtitle">Усадьба Валуева</h3>
+            <p class="location-address">108821, Москва, Филимонковское поселение, посёлок Валуево </p>
+            <p class="location-address">Въезд на территорию через КПП. </p>
+            <h3 class="location-subtitle">Начало в 15:30</h3>
+            <img src="loc.jpg" alt="Усадьба Валуева" class="location-image">
+            <button class="route-btn" id="routeBtn">Маршрут</button>
+        </section>
+
+        <!-- СЕКЦИЯ 4: План дня -->
+        <!-- СЕКЦИЯ 4: План дня -->
+        <section class="schedule">
+            <h2 class="schedule-title">План дня</h2>
+            <div class="schedule-list">
+                <div class="schedule-item">
+                    <img src="pd2.png" alt="" class="schedule-icon">
+                    <div class="schedule-info">
+                        <div class="schedule-event">Приветственный фуршет</div>
+                        <div class="schedule-time">15:30</div>
+                    </div>
+                </div>
+                <div class="schedule-divider"></div>
+                
+                <div class="schedule-item">
+                    <img src="pd1.png" alt="" class="schedule-icon">
+                    <div class="schedule-info">
+                        <div class="schedule-event">Торжественнейшая церемония</div>
+                        <div class="schedule-time">16:00</div>
+                    </div>
+                </div>
+                <div class="schedule-divider"></div>
+                
+                <div class="schedule-item">
+                    <img src="pd4.png" alt="" class="schedule-icon">
+                    <div class="schedule-info">
+                        <div class="schedule-event">Едим, играем, поем, пляшем</div>
+                        <div class="schedule-time">16:30-22:00</div>
+                    </div>
+                </div>
+                <div class="schedule-divider"></div>
+                
+                <div class="schedule-item">
+                    <img src="pd5.png" alt="" class="schedule-icon">
+                    <div class="schedule-info">
+                        <div class="schedule-event">Завершаем веселье</div>
+                        <div class="schedule-time">22:00-23:00</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ 5: Dress-code -->
+        <section class="dresscode">
+            <h2 class="dresscode-title">Dress-code</h2>
+            <p class="dresscode-text">Мы очень ждем и с удовольствием готовимся к нашему незабываемому дню!<br><br>Поддержите нас вашими улыбками и объятиями, а также красивыми нарядами в палитре торжества.</p>
+            <div class="color-palette">
+                <div class="color-box" style="background-color: #9C3C30;"></div>
+                <div class="color-box" style="background-color: #D5C4B3;"></div>
+                <div class="color-box" style="background-color: #66604A;"></div>
+                <div class="color-box" style="background-color: #AE7723;"></div>
+                <div class="color-box" style="background-color: #AC9375;"></div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ: Пожелания -->
+        <section class="wishes">
+            <h2 class="wishes-title">Пожелания</h2>
+            <p class="wishes-text">В качестве подарка мы будем рады вкладу в бюджет нашей семьи. Он точно поможет воплотить нашу мечту в реальность!</p>
+        </section>
+
+        <!-- СЕКЦИЯ 6: Детали -->
+        <section class="details">
+            <h2 class="details-title">Детали</h2>
+            <div class="details-content">
+                <div class="details-block">
+                    <div class="details-label">ДЕТИ</div>
+                    <div class="details-divider"></div>
+                    <p class="details-text">Пожалуйста, обратите внимание на время прихода и заранее сообщите нам, если у вас возникнут вопросы.</p>
+                </div>
+                
+                <div class="details-block">
+                    <div class="details-label">ГОРЬКО!</div>
+                    <div class="details-divider"></div>
+                    <p class="details-text">Мы будем рады видеть вас в нашем любимом месте, которое особенно важно для нас.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ 7: Присутствие -->
+        <!-- СЕКЦИЯ 7: Присутствие -->
+        <section class="attendance">
+            <h2 class="attendance-title">Присутствие</h2>
+            <p class="attendance-text">Пожалуйста, подтвердите ваше присутствие на нашем празднике до 02 июня 2025 и ответьте на несколько вопросов:</p>
+            
+            <!-- Поля ввода -->
+            <div class="attendance-inputs">
+                <input type="text" class="attendance-input" placeholder="Имя и фамилия" id="guestName">
+                <input type="text" class="attendance-input" placeholder="Количество" id="guestCount">
+            </div>
+            
+            <!-- Опрос для гостей -->
+            <div class="survey-wrapper">
+                <div class="survey-divider"></div>
+                <h3 class="survey-heading">Опрос для гостей</h3>
+                <form class="survey-form" id="surveyForm">
+                    <!-- 1. Подтверждение присутствия -->
+                    <div class="survey-group">
+                        <label class="survey-label">Подтверждение присутствия:</label>
+                        <div class="survey-radios">
+                            <label class="radio-item"><input type="radio" name="attendance" value="точно буду"> Точно буду</label>
+                            <label class="radio-item"><input type="radio" name="attendance" value="не получится"> К сожалению, не получится</label>
+                        </div>
+                    </div>
+
+                    <!-- 2. Алкоголь -->
+                    <div class="survey-group">
+                        <label class="survey-label">Алкоголь:</label>
+                        <div class="survey-checkboxes">
+                            <label class="checkbox-item"><input type="checkbox" name="alcohol" value="игристое"> Игристое</label>
+                            <label class="checkbox-item"><input type="checkbox" name="alcohol" value="вино красное сухое"> Вино красное сухое</label>
+                            <label class="checkbox-item"><input type="checkbox" name="alcohol" value="вино белое сухое"> Вино белое сухое</label>
+                            <label class="checkbox-item"><input type="checkbox" name="alcohol" value="вино полусладкое"> Вино полусладкое</label>
+                            <label class="checkbox-item"><input type="checkbox" name="alcohol" value="коньяк"> Коньяк</label>
+                            <label class="checkbox-item"><input type="checkbox" name="alcohol" value="водка"> Водка</label>
+                            <label class="checkbox-item"><input type="checkbox" name="alcohol" value="что-нибудь безалкогольное"> Что-нибудь безалкогольное</label>
+                        </div>
+                    </div>
+
+                    <!-- 3. Аллергия -->
+                    <div class="survey-group">
+                        <label class="survey-label">Есть ли пищевая аллергия на что-либо?</label>
+                        <div class="survey-radios">
+                            <label class="radio-item"><input type="radio" name="allergy" value="нет" class="allergy-radio"> Нет</label>
+                            <label class="radio-item"><input type="radio" name="allergy" value="да" class="allergy-radio"> Да</label>
+                        </div>
+                        <input type="text" class="survey-input allergy-details" placeholder="Если да, укажите на что" style="display: none;">
+                    </div>
+
+                    <!-- 4. Предпочтения по горячему -->
+                    <div class="survey-group">
+                        <label class="survey-label">Предпочтения по горячему:</label>
+                        <div class="survey-radios">
+                            <label class="radio-item"><input type="radio" name="hot" value="курица"> курица</label>
+                            <label class="radio-item"><input type="radio" name="hot" value="свинина"> свинина</label>
+                            <label class="radio-item"><input type="radio" name="hot" value="рыба"> рыба</label>
+                        </div>
+                    </div>
+
+                    <!-- 5. Трансфер -->
+                    <div class="survey-group">
+                        <label class="survey-label">Нужен ли трансфер?</label>
+                        <div class="survey-radios">
+                            <label class="radio-item"><input type="radio" name="transfer" value="да"> Да, было бы прекрасно</label>
+                            <label class="radio-item"><input type="radio" name="transfer" value="нет"> Не нужен, доедем сами</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="survey-submit">ОТПРАВИТЬ</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ 8: Таймер -->
+        <section class="timer-section">
+            <div class="timer-bg">
+                <p class="timer-label">ДО ВСТРЕЧИ ОСТАЛОСЬ:</p>
+                <div class="timer">
+                    <div class="timer-item">
+                        <span class="timer-number" id="days">00</span>
+                        <span class="timer-unit">дней</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="hours">00</span>
+                        <span class="timer-unit">часов</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="minutes">00</span>
+                        <span class="timer-unit">минут</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="seconds">00</span>
+                        <span class="timer-unit">секунд</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
