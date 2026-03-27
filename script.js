@@ -101,7 +101,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const routeBtn = document.getElementById('routeBtn');
     if (routeBtn) {
         routeBtn.addEventListener('click', () => {
-            window.open('https://yandex.ru/maps/-/CPVnRVil', '_blank');
+            window.open('https://yandex.ru/maps/org/usadba_valuyevo/235067855833?si=uq3bay3qjurv8vq6b5q2bn7n8c', '_blank');
+        });
+    }
+
+
+    const routeBtn2 = document.getElementById('routeBtn2');
+    if (routeBtn2) {
+        routeBtn2.addEventListener('click', () => {
+            window.open('https://t.me/+kpv0E9g78gU3MWQy', '_blank');
         });
     }
 
