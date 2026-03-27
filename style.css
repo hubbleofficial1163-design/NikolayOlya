@@ -1083,3 +1083,37 @@ a:focus {
         max-width: 100%;
     }
 }
+
+
+.route-btn2 {
+    background-color: #fff;
+    border: 1px solid #8B2C2D;
+    border-radius: 40px;
+    padding: 12px 32px;
+    font-family: 'TildaSans', 'Playfair Display', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #8B2C2D;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 24px;
+    margin-bottom: -20px;
+    position: relative;
+    background-color: #fff;
+    display: inline-block;
+    z-index: 2;
+}
+
+.route-btn2:active {
+    transform: scale(0.96);
+    background-color: #8B2C2D;
+    color: #fff;
+}
+
+@media screen and (max-width: 479px) {  
+    .route-btn2 {
+        padding: 10px 28px;
+        font-size: 14px;
+        margin-bottom: -18px;
+    }
+}
