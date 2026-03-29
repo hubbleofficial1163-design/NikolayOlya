@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const musicToggle = document.getElementById('musicToggle');
     const musicIcon = document.getElementById('musicIcon');
     const musicText = document.getElementById('musicText');
-    const audio = new Audio('11.mp3');
+    const audio = new Audio('111.mp3');
     audio.loop = true;
     let isPlaying = false;
 
@@ -161,17 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const allergy = document.querySelector('input[name="allergy"]:checked')?.value;
             const allergyText = allergy === 'да' ? document.querySelector('.allergy-details')?.value : 'нет';
             const hot = document.querySelector('input[name="hot"]:checked')?.value;
-            const transfer = document.querySelector('input[name="transfer"]:checked')?.value;
             
             if (!hot) {
                 alert('Пожалуйста, выберите предпочтения по горячему');
                 return;
             }
             
-            if (!transfer) {
-                alert('Пожалуйста, укажите, нужен ли трансфер');
-                return;
-            }
             
             // Формируем сообщение с ответами
             let message = `Спасибо, ${name}!\n\n`;
@@ -182,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 message += `Алкоголь: ${alcohol.length ? alcohol.join(', ') : 'не выбран'}\n`;
                 message += `Аллергия: ${allergy === 'да' ? allergyText : 'нет'}\n`;
                 message += `Горячее: ${hot}\n`;
-                message += `Трансфер: ${transfer === 'да' ? 'Да, был бы прекрасно' : 'Не нужен, доедем сами'}\n`;
             }
             
             alert(message);
@@ -195,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('input[name="alcohol"]:checked').forEach(cb => cb.checked = false);
             document.querySelectorAll('input[name="allergy"]:checked').forEach(rb => rb.checked = false);
             document.querySelectorAll('input[name="hot"]:checked').forEach(rb => rb.checked = false);
-            document.querySelectorAll('input[name="transfer"]:checked').forEach(rb => rb.checked = false);
         });
     }
 
