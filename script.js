@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     const routeBtn2 = document.getElementById('routeBtn2');
     if (routeBtn2) {
         routeBtn2.addEventListener('click', () => {
@@ -131,10 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Обработка отправки опроса
+    // ========== ОТПРАВКА ФОРМЫ (с изменением текста кнопки) ==========
     const surveyForm = document.getElementById('surveyForm');
     if (surveyForm) {
-        surveyForm.addEventListener('submit', (e) => {
+        surveyForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const name = document.getElementById('guestName')?.value.trim();
@@ -167,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            
             // Формируем сообщение с ответами
             let message = `Спасибо, ${name}!\n\n`;
             message += `Количество гостей: ${count}\n`;
@@ -179,13 +177,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 message += `Горячее: ${hot}\n`;
             }
             
+            // ========== ОТПРАВКА В ТАБЛИЦУ С ИЗМЕНЕНИЕМ ТЕКСТА КНОПКИ ==========
+            const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby_WHZ8GA4G3seUP5BT7ny1z2eYHKE4Wxcf2eKUIZH4y9zxMogsDYLWFjZdZXvu8_1i1A/exec';
+            
+            // Меняем текст кнопки
+            const submitBtn = e.target.querySelector('.survey-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Отправляется...';
+            submitBtn.disabled = true;
+            
+            // Отправляем данные
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('guestCount', count);
+            formData.append('attendance', attendance);
+            formData.append('alcohol', alcohol.join(', '));
+            formData.append('allergy', allergy || 'нет');
+            if (allergy === 'да' && allergyText && allergyText !== 'нет') {
+                formData.append('allergyDetails', allergyText);
+            }
+            formData.append('hot', hot);
+            
+            try {
+                await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+            } catch (err) {
+                console.log('Ошибка отправки:', err);
+            }
+            
+            // Возвращаем текст кнопки
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            // ========== КОНЕЦ ОТПРАВКИ ==========
+            
             alert(message);
             
             // Сброс формы
             surveyForm.reset();
             if (allergyDetails) allergyDetails.style.display = 'none';
             
-            // Сбрасываем выделение с радио-кнопок (кроме attendance, их оставляем)
+            // Сбрасываем выделение с радио-кнопок
             document.querySelectorAll('input[name="alcohol"]:checked').forEach(cb => cb.checked = false);
             document.querySelectorAll('input[name="allergy"]:checked').forEach(rb => rb.checked = false);
             document.querySelectorAll('input[name="hot"]:checked').forEach(rb => rb.checked = false);
